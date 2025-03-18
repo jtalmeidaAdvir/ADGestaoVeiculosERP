@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|c:\\users\\jtalm\\source\\repos\\adgestaoveiculoserp\\adgestaoveiculoserp\\listadespesasf3m.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|solutionrelative:adgestaoveiculoserp\\listadespesasf3m.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|c:\\users\\jtalm\\source\\repos\\adgestaoveiculoserp\\adgestaoveiculoserp\\listadespesasf3m.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|solutionrelative:adgestaoveiculoserp\\listadespesasf3m.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|c:\\users\\jtalm\\source\\repos\\adgestaoveiculoserp\\adgestaoveiculoserp\\criarviaturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|solutionrelative:adgestaoveiculoserp\\criarviaturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\adgestaoveiculoserp\\criarviaturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|solutionrelative:adgestaoveiculoserp\\criarviaturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CriarViaturas.cs",
+              "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\CriarViaturas.cs",
+              "RelativeDocumentMoniker": "ADGestaoVeiculosERP\\CriarViaturas.cs",
+              "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\CriarViaturas.cs",
+              "RelativeToolTip": "ADGestaoVeiculosERP\\CriarViaturas.cs",
+              "ViewState": "AgIAAP8CAAAAAAAAAAAgwBEDAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T20:59:46.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ListaDespesasF3M.cs",
+              "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\ListaDespesasF3M.cs",
+              "RelativeDocumentMoniker": "ADGestaoVeiculosERP\\ListaDespesasF3M.cs",
+              "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\ListaDespesasF3M.cs",
+              "RelativeToolTip": "ADGestaoVeiculosERP\\ListaDespesasF3M.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAxwCIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T17:38:46.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListaDespesasF3M.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\ListaDespesasF3M.cs",
+              "RelativeDocumentMoniker": "ADGestaoVeiculosERP\\ListaDespesasF3M.cs",
+              "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\ListaDespesasF3M.cs [Design]",
+              "RelativeToolTip": "ADGestaoVeiculosERP\\ListaDespesasF3M.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T17:20:38.35Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CriarViaturas.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\CriarViaturas.cs",
+              "RelativeDocumentMoniker": "ADGestaoVeiculosERP\\CriarViaturas.cs",
+              "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\CriarViaturas.cs [Design]",
+              "RelativeToolTip": "ADGestaoVeiculosERP\\CriarViaturas.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T12:53:00.523Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ADGestaoVeiculosERP</RootNamespace>
+    <AssemblyName>ADGestaoVeiculosERP</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BasBE100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\Apl\BasBE100.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CmpBE100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\CmpBE100.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ErpBS100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\ErpBS100.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ErpDS100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\Apl\ErpDS100.dll</HintPath>
+    </Reference>
+    <Reference Include="IBasBS100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\Apl\IBasBS100.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICmpBS100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\ICmpBS100.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Primavera.Extensibility.Attributes">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\Primavera.Extensibility.Attributes.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Primavera.Extensibility.Base">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\Primavera.Extensibility.Base.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Primavera.Extensibility.BusinessEntities">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\Primavera.Extensibility.BusinessEntities.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Primavera.Extensibility.CustomCode">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\Primavera.Extensibility.CustomCode.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Primavera.Extensibility.CustomForm">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\Primavera.Extensibility.CustomForm.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Primavera.Extensibility.Integration">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\Primavera.Extensibility.Integration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Primavera.Extensibility.Purchases">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\Primavera.Extensibility.Purchases.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PriTextBoxF4100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\Apl\PriTextBoxF4100.dll</HintPath>
+    </Reference>
+    <Reference Include="StdBE100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\StdBE100.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="StdPlatBS100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\StdPlatBS100.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CriarViaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriarViaturas.Designer.cs">
+      <DependentUpon>CriarViaturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorCompra.cs" />
+    <Compile Include="EditorCondutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorCondutor.Designer.cs">
+      <DependentUpon>EditorCondutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorEntidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorEntidade.Designer.cs">
+      <DependentUpon>EditorEntidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorManutencao.Designer.cs">
+      <DependentUpon>EditorManutencao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditorVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditorVenda.Designer.cs">
+      <DependentUpon>FormEditorVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCusto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaCusto.Designer.cs">
+      <DependentUpon>ListaCusto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaDespesasF3M.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaDespesasF3M.Designer.cs">
+      <DependentUpon>ListaDespesasF3M.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaManutencaoCustos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaManutencaoCustos.Designer.cs">
+      <DependentUpon>ListaManutencaoCustos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaVeiculosAlerta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaVeiculosAlerta.Designer.cs">
+      <DependentUpon>ListaVeiculosAlerta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaViaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaViaturas.Designer.cs">
+      <DependentUpon>ListaViaturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="viaturasMenu.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CriarViaturas.resx">
+      <DependentUpon>CriarViaturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorCondutor.resx">
+      <DependentUpon>EditorCondutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorEntidade.resx">
+      <DependentUpon>EditorEntidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorManutencao.resx">
+      <DependentUpon>EditorManutencao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditorVenda.resx">
+      <DependentUpon>FormEditorVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCusto.resx">
+      <DependentUpon>ListaCusto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaDespesasF3M.resx">
+      <DependentUpon>ListaDespesasF3M.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaManutencaoCustos.resx">
+      <DependentUpon>ListaManutencaoCustos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaVeiculosAlerta.resx">
+      <DependentUpon>ListaVeiculosAlerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaViaturas.resx">
+      <DependentUpon>ListaViaturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Postman.lnk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_mapa_transp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_mapa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\CompraIcon.png" />
+    <None Include="Resources\CompraIcon1.png" />
+    <Content Include="Resources\DefaultIcon.png" />
+    <None Include="Resources\VendaIcon1.png" />
+    <None Include="Resources\DefaultIcon1.png" />
+    <Content Include="Resources\DespesaIcon.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\DespesaIcon1.png" />
+    <None Include="Resources\maintenance.png" />
+    <Content Include="Resources\VendaIcon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
