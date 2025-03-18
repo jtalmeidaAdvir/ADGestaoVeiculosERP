@@ -745,14 +745,15 @@ namespace ADGestaoVeiculosERP
                 else if (coluna == "Data")
                 {
                     DateTime? dataConvertida = null;
-
                     // Tente converter para DateTime, se possível
                     if (DateTime.TryParse(novoValor, out DateTime data))
                     {
                         dataConvertida = data;
                     }
+                    
 
                     string dataSQL = dataConvertida.HasValue ? $"'{dataConvertida.Value.ToString("yyyy-MM-dd")}'" : "NULL";
+                    
                     setClause = $"DataEvento = {dataSQL}";
                     Where = $"AND Descricao = '{descricaoOriginal}'";
                 }

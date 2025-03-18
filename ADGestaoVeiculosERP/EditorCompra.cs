@@ -26,17 +26,34 @@ namespace ADGestaoVeiculosERP
                     if (linha.Artigo != "")
                     {
                         var campo = linha.CamposUtil["CDU_Kms"].Valor.ToString();
-              
+                        var campo2 = linha.CamposUtil["CDU_UltimoKms"].Valor;
                         if (campo == "0")
                         {
                             MessageBox.Show("Os quilômetros são obrigatórios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             Cancel = true;
                             break;
                         }
+
+
+                        var Kms = Convert.ToInt32(linha.CamposUtil["CDU_Kms"].Valor);
+                        var Ulkms = Convert.ToInt32(linha.CamposUtil["CDU_UltimoKms"].Valor);
+
+                        if (Ulkms > Kms)
+                        {
+                            MessageBox.Show("Aviso: O último quilómetro registado é maior do que o quilómetro atual!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            Cancel = true;
+                            break;
+                        }
+
                     }
 
                 }
             };
+
+
+
+
             
         }
 
@@ -249,11 +266,16 @@ namespace ADGestaoVeiculosERP
                     {
                         var iddoc = this.DocumentoCompra.ID;
                         var datadoc = this.DocumentoCompra.DataDoc;
+                        var datadocFormatted = Convert.ToDateTime(datadoc).ToString("yyyy-MM-dd HH:mm:ss");
+                        var query2 = $@"
+    SELECT TOP 1 CDU_UltimoKms, * 
+    FROM LinhasCompras 
+    WHERE CDU_Matricula = '{campo}' 
+          AND DataDoc < '{datadocFormatted}'
+    ORDER BY DataDoc DESC";
+
                         var query = $@"SELECT * FROM [PRIPVEIGA].[dbo].AD_Viaturas WHERE IdMatricula = '{campo}'";
-                        var query2 = $@"SELECT TOP 1 CDU_UltimoKms,* 
-                                        FROM LinhasCompras 
-                                        WHERE CDU_Matricula = '{campo}'
-                                        ORDER BY DataDoc DESC ";
+      
                         var veiculo = BSO.Consulta(query2);
                         var num = veiculo.NumLinhas();
 
