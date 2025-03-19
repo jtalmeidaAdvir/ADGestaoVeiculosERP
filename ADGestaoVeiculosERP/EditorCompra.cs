@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 
 
 namespace ADGestaoVeiculosERP
@@ -244,11 +245,37 @@ namespace ADGestaoVeiculosERP
 
         public override void TeclaPressionada(int KeyCode, int Shift, ExtensibilityEventArgs e)
         {
-            FormMenu menu = new FormMenu(BSO, PSO);
-            menu.Show();
+            var tipodoc = this.DocumentoCompra.Tipodoc;
+            if (tipodoc == "COMBV")
+            {
+                var linhas = this.DocumentoCompra.Linhas.NumItens;
+                for (int i = 1; i < linhas + 1; i++)
+                {
+                    var linha = this.DocumentoCompra.Linhas.GetEdita(i);
+                    if (linha.Artigo != "")
+                    {
+                        
+                        if (KeyCode == 77 && Shift == 2) 
+                        {
+                            MatriculasCompras matriculasCompras = new MatriculasCompras(BSO, this.DocumentoCompra);
+                            matriculasCompras.ShowDialog();
+                            atualiza();
+                            break;
+                        }
+                    }
+                }
+                if (KeyCode == 77 && Shift == 2)
+                {
+                   
+                }
+                else
+                {
+                    FormMenu menu = new FormMenu(BSO, PSO);
+                    menu.Show();
+                }
+            }
         }
-
-        public override void ValidaLinha(int NumLinha, ExtensibilityEventArgs e)
+        private void atualiza()
         {
             var linhas = this.DocumentoCompra.Linhas.NumItens;
 
@@ -256,12 +283,12 @@ namespace ADGestaoVeiculosERP
             {
 
                 var linha = this.DocumentoCompra.Linhas.GetEdita(i);
-            
+
                 if (linha.Artigo != "")
                 {
                     var campo = linha.CamposUtil["CDU_Matricula"].Valor.ToString();
                     var campoUltimo = linha.CamposUtil["CDU_UltimoKms"].Valor.ToString();
-                 
+
                     if (campo != "")
                     {
                         var iddoc = this.DocumentoCompra.ID;
@@ -275,11 +302,11 @@ namespace ADGestaoVeiculosERP
     ORDER BY DataDoc DESC";
 
                         var query = $@"SELECT * FROM [PRIPVEIGA].[dbo].AD_Viaturas WHERE IdMatricula = '{campo}'";
-      
+
                         var veiculo = BSO.Consulta(query2);
                         var num = veiculo.NumLinhas();
 
-                         
+
                         var veiculo2 = BSO.Consulta(query);
 
                         if (num != 0)
@@ -293,13 +320,17 @@ namespace ADGestaoVeiculosERP
                             linha.CamposUtil["CDU_UltimoKms"].Valor = kmsAtuais;
                         }
 
-                 
+
 
 
                     }
                 }
 
             }
+        }
+        public override void ValidaLinha(int NumLinha, ExtensibilityEventArgs e)
+        {
+            atualiza();
         }
     }
 }

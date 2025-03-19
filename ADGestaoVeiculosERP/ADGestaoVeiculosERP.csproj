@@ -177,6 +177,12 @@
     <Compile Include="ListaViaturas.Designer.cs">
       <DependentUpon>ListaViaturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="MatriculasCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatriculasCompras.Designer.cs">
+      <DependentUpon>MatriculasCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaViaturas.resx">
       <DependentUpon>ListaViaturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatriculasCompras.resx">
+      <DependentUpon>MatriculasCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

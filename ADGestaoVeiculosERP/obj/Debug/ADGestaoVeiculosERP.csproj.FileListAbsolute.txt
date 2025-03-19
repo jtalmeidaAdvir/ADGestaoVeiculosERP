@@ -20,3 +20,4 @@ C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\obj\Debug\AD
 C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\obj\Debug\ADGestaoVeiculosERP.FormMenu.resources
 C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\obj\Debug\ADGestaoVeiculosERP.ListaManutencao.resources
 C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\obj\Debug\ADGestaoVeiculosERP.ListaDespesasF3M.resources
+C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\obj\Debug\ADGestaoVeiculosERP.MatriculasCompras.resources
