@@ -34,6 +34,7 @@ namespace ADGestaoVeiculosERP
             DTP_DataInspecao.Format = DateTimePickerFormat.Custom;
         }
 
+
         private void GetVeiculos()
         {
             var query = $@"SELECt * FROM [PRIPVEIGA].[dbo].AD_Viaturas WHERE IdMatricula = '{MatriculaStrig}'";
@@ -59,6 +60,8 @@ namespace ADGestaoVeiculosERP
             NUD_MedioConsumo.Text = veiculoEscolhido.DaValor<string>("MediaConsumo");
             NUD_KMActuais.Text = veiculoEscolhido.DaValor<string>("KMActuais");
             NUD_DiaPrestacao.Text = veiculoEscolhido.DaValor<string>("DiaPrestacao");
+
+            dtp_Data.Value  = veiculoEscolhido.DaValor<DateTime>("Data");
 
 
             // Verificação para garantir que DataCompra seja tratada corretamente
@@ -188,8 +191,11 @@ namespace ADGestaoVeiculosERP
                       {
                           DTP_DataCompra.Value = DateTime.Parse(veiculo["DataCompra"]);
                       }
-
-                      TXT_CodEntidade.Text = veiculo["CodEntidade"];
+                        if (veiculo["Data"] != "")
+                        {
+                            dtp_Data.Value = DateTime.Parse(veiculo["Data"]);
+                        }
+            TXT_CodEntidade.Text = veiculo["CodEntidade"];
                       TXT_TipoCompra.Text = veiculo["TipoCompra"];
                       NUD_ValorMensal.Text = veiculo["ValorMensal"];
 
@@ -234,10 +240,10 @@ namespace ADGestaoVeiculosERP
         private void GetVeiculos(ref Dictionary<string, string> veiculo)
         {
             string NomeLista = "Veiculos";
-            string Campos = "Codigo,IdMatricula, Marca, Modelo, Cor, Categoria, Cilindrada, NumCondutor, Combustivel, KilometrosIniciais, KilometrosOutros, TotalDespesas,TotalCombustivel,Obs,Activo,Tara,TipoViatura,MediaConsumo,CustoMedioKM,CustoMedioKMDespesas,MedidaPneus,KMActuais,DiaPrestacao,DataCompra,CodEntidade,TipoCompra,ValorMensal,PrazoPagamento,ObsCompra,Lugares,Manutencao,KmsFaltaManutencao";
+            string Campos = "Codigo,IdMatricula, Marca, Modelo, Cor, Categoria, Cilindrada, NumCondutor, Combustivel, KilometrosIniciais, KilometrosOutros, TotalDespesas,TotalCombustivel,Obs,Activo,Tara,TipoViatura,MediaConsumo,CustoMedioKM,CustoMedioKMDespesas,MedidaPneus,KMActuais,DiaPrestacao,DataCompra,CodEntidade,TipoCompra,ValorMensal,PrazoPagamento,ObsCompra,Lugares,Manutencao,KmsFaltaManutencao,Data";
             string Tabela = "[PRIPVEIGA].[dbo].AD_Viaturas (NOLOCK)";
             string Where = "Activo = 1";
-            string CamposF4 = "Codigo,IdMatricula, Marca, Modelo, Cor, Categoria, Cilindrada, NumCondutor, Combustivel, KilometrosIniciais, KilometrosOutros, TotalDespesas,TotalCombustivel,Obs,Activo,Tara,TipoViatura,MediaConsumo,CustoMedioKM,CustoMedioKMDespesas,MedidaPneus,KMActuais,DiaPrestacao,DataCompra,CodEntidade,TipoCompra,ValorMensal,PrazoPagamento,ObsCompra,Lugares,Manutencao,KmsFaltaManutencao";
+            string CamposF4 = "Codigo,IdMatricula, Marca, Modelo, Cor, Categoria, Cilindrada, NumCondutor, Combustivel, KilometrosIniciais, KilometrosOutros, TotalDespesas,TotalCombustivel,Obs,Activo,Tara,TipoViatura,MediaConsumo,CustoMedioKM,CustoMedioKMDespesas,MedidaPneus,KMActuais,DiaPrestacao,DataCompra,CodEntidade,TipoCompra,ValorMensal,PrazoPagamento,ObsCompra,Lugares,Manutencao,KmsFaltaManutencao,Data";
             string orderby = "Codigo, IdMatricula";
 
             List<string> ResQuery = new List<string>();
@@ -257,24 +263,7 @@ namespace ADGestaoVeiculosERP
             }
         }
 
-        private void OpenF4List(string campos, string tabela, string where, string camposF4, string orderby, string nomeLista, Form frm, ref List<string> resQuery)
-        {
-            string strSQL = "select distinct " + campos + " FROM " + tabela;
 
-            if (where.Length > 0)
-            {
-                strSQL += " WHERE " + where;
-            }
-
-            strSQL += " Order by " + orderby;
-            string result = Convert.ToString(PSO.Listas.GetF4SQL(nomeLista, strSQL, camposF4, frm));
-            
-            if (!string.IsNullOrEmpty(result))
-            {
-                string[] itemQuery = result.Split('\t');
-                resQuery.AddRange(itemQuery);
-            }
-        }
 
         private void BT_F4Condutor_Click(object sender, EventArgs e)
         {
@@ -398,7 +387,6 @@ namespace ADGestaoVeiculosERP
             if (TXT_Matricula.Text != null)
             {
 
-
                 var queryViaturaExiste = $@"SELECT * FROM [PRIPVEIGA].[dbo].AD_Viaturas WHERE IdMatricula = '{TXT_Matricula.Text}'";
 
                 var ExisteViatura = BSO.Consulta(queryViaturaExiste);
@@ -407,7 +395,6 @@ namespace ADGestaoVeiculosERP
                     MessageBox.Show("A matrícula do veículo já existe. Por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
 
 
                 var combustivel = CB_Combustivel?.SelectedItem?.ToString();
@@ -699,11 +686,67 @@ namespace ADGestaoVeiculosERP
 
         private void listaCustoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var matri = TXT_Matricula.Text;
-            ListaCusto listaCustoForm = new ListaCusto(BSO, PSO, matri);
-            listaCustoForm.ShowDialog();
+            try
+            {
+                var matri = TXT_Matricula.Text;
+                ListaCusto listaCustoForm = new ListaCusto(BSO, PSO, matri);
+                listaCustoForm.ShowDialog();
+
+
+                //ListaCustos(matri);
+                // var query = PSO.Listas.BSO.Listas.CarregaLista("ListasTrabalho", "5D89F3F4-7D32-11E3-90FB-000C29012999");
+
+               // Control control = new Control();
+
+
+               // PSO.Listas.BSO.Listas.TrataF4Id("CabecCompras", "", this, control, "Movimentos de Compra - Viaturas", "783D5F9B-9ED3-4EEC-8BED-E5A2D20F3A26");//3427ADAD-2D31-4F2A-9319-12240E7B034E
+            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+
+
+        }
+        private void ListaCustos(string matricula)
+        {
+            string NomeLista = "Lista Custo";
+            string Campos = "[LinhasCompras].[CDU_Matricula], [CabecCompras].[TipoDoc], [CabecCompras].[Serie], " +
+                            "[CabecCompras].[NumDoc], [CabecCompras].[TipoEntidade], [CabecCompras].[Entidade], " +
+                            "[LinhasCompras].[Artigo], [LinhasCompras].[PrecUnit]";
+
+            string Tabela = "[CabecCompras] WITH (NOLOCK) LEFT JOIN [LinhasCompras] WITH (NOLOCK) ON [CabecCompras].[Id] = [LinhasCompras].[IdCabecCompras]";
+
+            string Where = $"([CabecCompras].[TipoDoc] IN ('COMBV','DESPV')) AND ([LinhasCompras].[CDU_Matricula] = '{matricula}')";
+
+            string CamposF4 = "[LinhasCompras].[CDU_Matricula]";
+            string orderby = "[LinhasCompras].[CDU_Matricula]";
+
+            List<string> ResQuery = new List<string>();
+
+            OpenF4List(Campos, Tabela, Where, CamposF4, orderby, NomeLista, this, ref ResQuery);
         }
 
+        private void OpenF4List(string campos, string tabela, string where, string camposF4, string orderby, string nomeLista, Form frm, ref List<string> resQuery)
+        {
+            string strSQL = "select distinct " + campos + " FROM " + tabela;
+
+            if (where.Length > 0)
+            {
+                strSQL += " WHERE " + where;
+            }
+
+            strSQL += " Order by " + orderby;
+            string result = Convert.ToString(PSO.Listas.GetF4SQL(nomeLista, strSQL, camposF4, frm));
+
+            if (!string.IsNullOrEmpty(result))
+            {
+                string[] itemQuery = result.Split('\t');
+                resQuery.AddRange(itemQuery);
+            }
+        }
         private void listaManutencaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var matri = TXT_Matricula.Text;

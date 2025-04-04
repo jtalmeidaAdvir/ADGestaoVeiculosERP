@@ -54,6 +54,10 @@
       <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\ICmpBS100.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="IVndBS100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\IVndBS100.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -82,8 +86,15 @@
       <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\Primavera.Extensibility.Integration.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Primavera.Extensibility.Patterns">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\Apl\Primavera.Extensibility.Patterns.dll</HintPath>
+    </Reference>
     <Reference Include="Primavera.Extensibility.Purchases">
       <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\Primavera.Extensibility.Purchases.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Primavera.Extensibility.Sales">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\Primavera.Extensibility.Sales.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PriTextBoxF4100">
@@ -92,6 +103,9 @@
     <Reference Include="StdBE100">
       <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\StdBE100.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="StdBESql100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\Apl\StdBESql100.dll</HintPath>
     </Reference>
     <Reference Include="StdPlatBS100">
       <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\StdPlatBS100.dll</HintPath>
@@ -108,6 +122,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="VndBE100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\APL\VndBE100.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CriarViaturas.cs">
@@ -115,6 +133,12 @@
     </Compile>
     <Compile Include="CriarViaturas.Designer.cs">
       <DependentUpon>CriarViaturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetalhesDespesasAntigas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalhesDespesasAntigas.Designer.cs">
+      <DependentUpon>DetalhesDespesasAntigas.cs</DependentUpon>
     </Compile>
     <Compile Include="EditorCompra.cs" />
     <Compile Include="EditorCondutor.cs">
@@ -135,6 +159,7 @@
     <Compile Include="EditorManutencao.Designer.cs">
       <DependentUpon>EditorManutencao.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditorVenda.cs" />
     <Compile Include="FormEditorVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +219,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CriarViaturas.resx">
       <DependentUpon>CriarViaturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalhesDespesasAntigas.resx">
+      <DependentUpon>DetalhesDespesasAntigas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditorCondutor.resx">
       <DependentUpon>EditorCondutor.cs</DependentUpon>

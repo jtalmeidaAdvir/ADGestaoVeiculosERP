@@ -43,6 +43,8 @@
             this.listaManutencaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnF4 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dtp_Data = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.BT_F4Condutor = new System.Windows.Forms.Button();
             this.TXT_MedidaPneus = new System.Windows.Forms.TextBox();
@@ -259,6 +261,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dtp_Data);
+            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.BT_F4Condutor);
             this.tabPage1.Controls.Add(this.TXT_MedidaPneus);
@@ -293,6 +297,25 @@
             this.tabPage1.Text = "Características";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dtp_Data
+            // 
+            this.dtp_Data.CustomFormat = "";
+            this.dtp_Data.Enabled = false;
+            this.dtp_Data.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Data.Location = new System.Drawing.Point(487, 23);
+            this.dtp_Data.Name = "dtp_Data";
+            this.dtp_Data.Size = new System.Drawing.Size(225, 23);
+            this.dtp_Data.TabIndex = 63;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(402, 26);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 15);
+            this.label13.TabIndex = 62;
+            this.label13.Text = "Data:";
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
@@ -318,7 +341,7 @@
             // TXT_MedidaPneus
             // 
             this.TXT_MedidaPneus.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_MedidaPneus.Location = new System.Drawing.Point(486, 139);
+            this.TXT_MedidaPneus.Location = new System.Drawing.Point(486, 170);
             this.TXT_MedidaPneus.Name = "TXT_MedidaPneus";
             this.TXT_MedidaPneus.Size = new System.Drawing.Size(226, 23);
             this.TXT_MedidaPneus.TabIndex = 58;
@@ -327,7 +350,7 @@
             // TXT_Categoria
             // 
             this.TXT_Categoria.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXT_Categoria.Location = new System.Drawing.Point(486, 110);
+            this.TXT_Categoria.Location = new System.Drawing.Point(486, 141);
             this.TXT_Categoria.Name = "TXT_Categoria";
             this.TXT_Categoria.Size = new System.Drawing.Size(226, 23);
             this.TXT_Categoria.TabIndex = 57;
@@ -335,7 +358,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(402, 142);
+            this.label12.Location = new System.Drawing.Point(402, 173);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(73, 15);
             this.label12.TabIndex = 56;
@@ -345,7 +368,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(402, 113);
+            this.label11.Location = new System.Drawing.Point(402, 144);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 15);
             this.label11.TabIndex = 55;
@@ -354,7 +377,7 @@
             // NUD_Tara
             // 
             this.NUD_Tara.DecimalPlaces = 2;
-            this.NUD_Tara.Location = new System.Drawing.Point(487, 52);
+            this.NUD_Tara.Location = new System.Drawing.Point(487, 83);
             this.NUD_Tara.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -366,7 +389,7 @@
             // 
             // NUD_Lugares
             // 
-            this.NUD_Lugares.Location = new System.Drawing.Point(487, 81);
+            this.NUD_Lugares.Location = new System.Drawing.Point(487, 112);
             this.NUD_Lugares.Name = "NUD_Lugares";
             this.NUD_Lugares.Size = new System.Drawing.Size(226, 23);
             this.NUD_Lugares.TabIndex = 53;
@@ -374,7 +397,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(402, 83);
+            this.label20.Location = new System.Drawing.Point(402, 114);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(83, 15);
             this.label20.TabIndex = 52;
@@ -383,7 +406,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(402, 55);
+            this.label21.Location = new System.Drawing.Point(402, 86);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(34, 15);
             this.label21.TabIndex = 51;
@@ -391,7 +414,7 @@
             // 
             // NUD_Cilindrada
             // 
-            this.NUD_Cilindrada.Location = new System.Drawing.Point(487, 23);
+            this.NUD_Cilindrada.Location = new System.Drawing.Point(487, 54);
             this.NUD_Cilindrada.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -404,7 +427,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(402, 26);
+            this.label22.Location = new System.Drawing.Point(402, 57);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(69, 15);
             this.label22.TabIndex = 49;
@@ -1045,7 +1068,7 @@
             // 
             this.button4.BackgroundImage = global::ADGestaoVeiculosERP.Properties.Resources.maintenance;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(787, 173);
+            this.button4.Location = new System.Drawing.Point(787, 92);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(44, 41);
             this.button4.TabIndex = 19;
@@ -1193,5 +1216,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Quilometros;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DateTimePicker dtp_Data;
+        private System.Windows.Forms.Label label13;
     }
 }

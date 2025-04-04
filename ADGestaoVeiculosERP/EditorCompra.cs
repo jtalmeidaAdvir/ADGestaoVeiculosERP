@@ -42,9 +42,6 @@ namespace ADGestaoVeiculosERP
                         if (Ulkms > Kms)
                         {
                             MessageBox.Show("Aviso: O último quilómetro registado é maior do que o quilómetro atual!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                            Cancel = true;
-                            break;
                         }
 
                     }
@@ -235,16 +232,19 @@ namespace ADGestaoVeiculosERP
 
                 }
 
+
             }
             catch (Exception ex)
             {
-             
             }
 
         }
 
         public override void TeclaPressionada(int KeyCode, int Shift, ExtensibilityEventArgs e)
         {
+
+
+
             var tipodoc = this.DocumentoCompra.Tipodoc;
             if (tipodoc == "COMBV")
             {
@@ -273,6 +273,11 @@ namespace ADGestaoVeiculosERP
                     FormMenu menu = new FormMenu(BSO, PSO);
                     menu.Show();
                 }
+            }
+            else
+            {
+                FormMenu menu = new FormMenu(BSO, PSO);
+                menu.Show();
             }
         }
         private void atualiza()

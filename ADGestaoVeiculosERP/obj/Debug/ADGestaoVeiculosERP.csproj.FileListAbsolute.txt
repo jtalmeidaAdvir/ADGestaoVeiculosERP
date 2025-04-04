@@ -21,3 +21,6 @@ C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\obj\Debug\AD
 C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\obj\Debug\ADGestaoVeiculosERP.ListaManutencao.resources
 C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\obj\Debug\ADGestaoVeiculosERP.ListaDespesasF3M.resources
 C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\obj\Debug\ADGestaoVeiculosERP.MatriculasCompras.resources
+C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\obj\Debug\ADGestaoVeiculosERP.DetalhesDespesasAntigas.resources
+C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\bin\Debug\Primavera.Extensibility.Patterns.dll
+C:\Users\jtalm\source\repos\ADGestaoVeiculosERP\ADGestaoVeiculosERP\bin\Debug\StdBESql100.dll

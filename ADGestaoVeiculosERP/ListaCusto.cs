@@ -28,7 +28,8 @@ namespace ADGestaoVeiculosERP
             public int Quantidade { get; set; }
             public string DataDoc { get; set; }
             public decimal PrecoLiquido { get; set; }
-
+            public string TipoDoc { get; set; }
+            public string NumDoc { get; set; }
         }
 
 
@@ -99,6 +100,8 @@ namespace ADGestaoVeiculosERP
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Quantidade", DataPropertyName = "Quantidade", Name = "Quantidade" });
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Preço Líquido (€)", DataPropertyName = "PrecoLiquido", Name = "PrecoLiquido" });
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Data Doc", DataPropertyName = "DataDoc", Name = "DataDoc" });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tipo Doc", DataPropertyName = "TipoDoc", Name = "TipoDoc" });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Num Doc", DataPropertyName = "NumDoc", Name = "NumDoc" });
 
             // Criar uma lista plana para exibir no DataGridView
             List<object> listaFlat = new List<object>();
@@ -114,19 +117,19 @@ namespace ADGestaoVeiculosERP
                 decimal totalPrecoUnitarioFatura = 0.0m;
                 int totalQuantidadeFatura = 0;
 
-                listaFlat.Add(new { Matricula = fatura.Matricula, Artigo = "", PrecUnit = 0.0m, DataDoc = "", Quantidade = 0, PrecoLiquido = 0.0m, Descricao = "" });
+                listaFlat.Add(new { Matricula = fatura.Matricula, Artigo = "", PrecUnit = 0.0m, DataDoc = "", Quantidade = 0, PrecoLiquido = 0.0m, Descricao = "", TipoDoc = "", NumDoc = "" });
 
                 // Adiciona as viaturas dentro da fatura e calcula os totais para esta fatura
                 foreach (var viatura in fatura.Viaturas)
                 {
-                    listaFlat.Add(new { Matricula = "", Artigo = viatura.Artigo, PrecUnit = viatura.PrecUnit, DataDoc = viatura.DataDoc, Quantidade = viatura.Quantidade, PrecoLiquido = viatura.PrecoLiquido, Descricao = viatura.Descricao });
+                    listaFlat.Add(new { Matricula = "", Artigo = viatura.Artigo, PrecUnit = viatura.PrecUnit, DataDoc = viatura.DataDoc, Quantidade = viatura.Quantidade, PrecoLiquido = viatura.PrecoLiquido, Descricao = viatura.Descricao, TipoDoc = viatura.TipoDoc, NumDoc = viatura.NumDoc });
                     totalPrecoLiquidoFatura += viatura.PrecoLiquido;
                     totalPrecoUnitarioFatura += viatura.PrecUnit * viatura.Quantidade;
                     totalQuantidadeFatura += viatura.Quantidade;
                 }
 
                 // Adicionar a linha de total para esta fatura (Subtotal)
-                listaFlat.Add(new { Matricula = "Subtotal", Artigo = "", PrecUnit = totalPrecoUnitarioFatura, DataDoc = "", Quantidade = totalQuantidadeFatura, PrecoLiquido = totalPrecoLiquidoFatura, Descricao = "" });
+                listaFlat.Add(new { Matricula = "Subtotal", Artigo = "", PrecUnit = totalPrecoUnitarioFatura, DataDoc = "", Quantidade = totalQuantidadeFatura, PrecoLiquido = totalPrecoLiquidoFatura, Descricao = "", TipoDoc = "", NumDoc = "" });
 
                 // Atualizar o total geral
                 totalGeral += totalPrecoLiquidoFatura;
@@ -135,7 +138,7 @@ namespace ADGestaoVeiculosERP
             }
 
             // Adicionar a linha de total geral no final
-            listaFlat.Add(new { Matricula = "Total", Artigo = "", PrecUnit = totalPrecoUnitarioGeral, DataDoc = "", Quantidade = totalQuantidadeGeral, PrecoLiquido = totalGeral, Descricao = "" });
+            listaFlat.Add(new { Matricula = "Total", Artigo = "", PrecUnit = totalPrecoUnitarioGeral, DataDoc = "", Quantidade = totalQuantidadeGeral, PrecoLiquido = totalGeral, Descricao = "", TipoDoc = "", NumDoc = "" });
 
             // Definir a fonte de dados para o DataGridView
             dataGridView1.DataSource = listaFlat;
@@ -208,15 +211,26 @@ namespace ADGestaoVeiculosERP
 
                 string idsCabecStr = string.Join(",", dicNumDoc.Keys.Select(id => $"'{id}'"));
                 string queryLinhas = $@"
-                                    SELECT CDU_Matricula, Artigo, IdCabecCompras, PrecUnit, DataDoc, Quantidade, PrecoLiquido, Descricao
-                                    FROM LinhasCompras
-                                    WHERE CDU_Matricula IS NOT NULL 
-                                    AND IdCabecCompras IN ({idsCabecStr})";
+                                    SELECT 
+                                    lc.CDU_Matricula, 
+                                    lc.Artigo, 
+                                    lc.IdCabecCompras, 
+                                    lc.PrecUnit, 
+                                    lc.DataDoc, 
+                                    lc.Quantidade, 
+                                    lc.PrecoLiquido, 
+                                    lc.Descricao,  
+                                    cc.TipoDoc, 
+                                    cc.NumDoc
+                                FROM LinhasCompras lc
+                                JOIN CabecCompras cc ON lc.IdCabecCompras = cc.Id
+                                WHERE lc.CDU_Matricula IS NOT NULL 
+                                AND lc.IdCabecCompras IN ({idsCabecStr})";
 
                 // Filtrar por matrícula, se necessário
                 if (!string.IsNullOrEmpty(matricula))
                 {
-                    queryLinhas += $" AND CDU_Matricula LIKE '%{matricula}%'";
+                    queryLinhas += $" AND  lc.CDU_Matricula LIKE '%{matricula}%'";
                 }
 
                 var listaLinhas = bSO.Consulta(queryLinhas);
@@ -243,7 +257,8 @@ namespace ADGestaoVeiculosERP
                     string descricaoQuery = $"SELECT Descricao FROM Artigo WHERE Artigo = '{artigo}'";
                     var descricao = bSO.Consulta(descricaoQuery);
                     string descricaoArtigo = descricao.NumLinhas() > 0 ? descricao.DaValor<string>("Descricao") : string.Empty;
-
+                    var tipoDoc = listaLinhas.DaValor<string>("TipoDoc");
+                    var numDoc = listaLinhas.DaValor<string>("NumDoc");
                     // Adicionar a viatura com a descrição
                     fatura.Viaturas.Add(new Viatura
                     {
@@ -253,7 +268,9 @@ namespace ADGestaoVeiculosERP
                         PrecUnit = Math.Abs(listaLinhas.DaValor<decimal>("PrecUnit")),
                         DataDoc = listaLinhas.DaValor<DateTime>("DataDoc").ToString("dd/MM/yyyy"),
                         Quantidade = Math.Abs(listaLinhas.DaValor<int>("Quantidade")),
-                        PrecoLiquido = Math.Abs(listaLinhas.DaValor<decimal>("PrecoLiquido"))
+                        PrecoLiquido = Math.Abs(listaLinhas.DaValor<decimal>("PrecoLiquido")),
+                        TipoDoc = tipoDoc,
+                        NumDoc = numDoc,
                     });
 
           

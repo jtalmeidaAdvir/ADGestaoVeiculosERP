@@ -13,7 +13,7 @@ namespace ADGestaoVeiculosERP
         public FormMenu(ErpBS100.ErpBS bSO, StdPlatBS100.StdBSInterfPub pSO)
         {
             InitializeComponent();
-
+            
             this.StartPosition = FormStartPosition.Manual;
 
             Screen screen = Screen.FromPoint(Cursor.Position);
@@ -28,12 +28,12 @@ namespace ADGestaoVeiculosERP
             this.Location = new Point(x, y);
             this.Height = height;
 
-
+            
 
 
             BSO = bSO;
             PSO = pSO;
-            this.Load += Menu_Load;
+           // this.Load += Menu_Load;
         }
 
         private void button1_Click(object sender, EventArgs e)

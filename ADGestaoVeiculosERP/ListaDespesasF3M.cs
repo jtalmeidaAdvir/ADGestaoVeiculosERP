@@ -44,9 +44,22 @@ namespace ADGestaoVeiculosERP
                 var NumViatura = result.DaValor<string>("NumViatura");
                 var Data = result.DaValor<string>("Data");
                 var Valor = result.DaValor<string>("Valor");
-                dataGridView1.Rows.Add(NumViatura, Data, Valor);
+                var numero = result.DaValor<string>("Numero");
+                dataGridView1.Rows.Add(NumViatura, Data, Valor, numero);
 
                 result.Seguinte();
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Verifica se a linha é válida
+            {
+                
+                string numero = dataGridView1.Rows[e.RowIndex].Cells["Numero"].Value.ToString();
+   
+                DetalhesDespesasAntigas detalhesDespesasAntigas = new DetalhesDespesasAntigas(_BSO, _PSO, numero);
+                detalhesDespesasAntigas.ShowDialog();
             }
         }
     }

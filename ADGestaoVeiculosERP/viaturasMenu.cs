@@ -16,6 +16,7 @@ namespace ADGestaoVeiculosERP
     {
         public override void TeclaPressionada(int KeyCode, int Shift, ExtensibilityEventArgs e)
         {
+            
             FormMenu menu = new FormMenu(BSO, PSO);
             menu.Show();
         }
