@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\adgestaoveiculoserp\\editorcompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|c:\\users\\jtalm\\source\\repos\\adgestaoveiculoserp\\adgestaoveiculoserp\\editorcompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|solutionrelative:adgestaoveiculoserp\\editorcompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\adgestaoveiculoserp\\criarviaturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|solutionrelative:adgestaoveiculoserp\\criarviaturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\adgestaoveiculoserp\\criarviaturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\adgestaoveiculoserp\\editorvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|solutionrelative:adgestaoveiculoserp\\editorvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|c:\\users\\jtalm\\source\\repos\\adgestaoveiculoserp\\adgestaoveiculoserp\\criarviaturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|solutionrelative:adgestaoveiculoserp\\criarviaturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F9F1869E-0146-4D3D-ADE6-5B2B8DDA7917}|ADGestaoVeiculosERP\\ADGestaoVeiculosERP.csproj|C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\adgestaoveiculoserp\\viaturasmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,7 +66,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "EditorVenda.cs",
               "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\EditorVenda.cs",
               "RelativeDocumentMoniker": "ADGestaoVeiculosERP\\EditorVenda.cs",
@@ -74,8 +74,7 @@
               "RelativeToolTip": "ADGestaoVeiculosERP\\EditorVenda.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAgwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T16:55:56.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T16:55:56.176Z"
             },
             {
               "$type": "Document",
@@ -85,14 +84,14 @@
               "RelativeDocumentMoniker": "ADGestaoVeiculosERP\\EditorCompra.cs",
               "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\EditorCompra.cs",
               "RelativeToolTip": "ADGestaoVeiculosERP\\EditorCompra.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAwwCsAAACuAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAHgAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T10:49:12.095Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "FormMenu.cs",
               "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\FormMenu.cs",
               "RelativeDocumentMoniker": "ADGestaoVeiculosERP\\FormMenu.cs",
@@ -100,20 +99,18 @@
               "RelativeToolTip": "ADGestaoVeiculosERP\\FormMenu.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T16:07:55.072Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T16:07:55.072Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FormMenu.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\FormMenu.cs",
               "RelativeDocumentMoniker": "ADGestaoVeiculosERP\\FormMenu.cs",
               "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\FormMenu.cs [Design]",
               "RelativeToolTip": "ADGestaoVeiculosERP\\FormMenu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T16:14:57.038Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-28T16:14:57.038Z"
             },
             {
               "$type": "Document",
@@ -124,45 +121,41 @@
               "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\ListaCusto.cs [Design]",
               "RelativeToolTip": "ADGestaoVeiculosERP\\ListaCusto.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T12:43:51.238Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-24T12:43:51.238Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "CriarViaturas.cs",
               "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\CriarViaturas.cs",
               "RelativeDocumentMoniker": "ADGestaoVeiculosERP\\CriarViaturas.cs",
               "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\CriarViaturas.cs",
               "RelativeToolTip": "ADGestaoVeiculosERP\\CriarViaturas.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAgwEQAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAH4CAAAAAAAAAAAuwK4CAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T12:37:06.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T12:37:06.188Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CriarViaturas.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\CriarViaturas.cs",
               "RelativeDocumentMoniker": "ADGestaoVeiculosERP\\CriarViaturas.cs",
               "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\CriarViaturas.cs [Design]",
               "RelativeToolTip": "ADGestaoVeiculosERP\\CriarViaturas.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T12:53:00.523Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-02-24T12:53:00.523Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DetalhesDespesasAntigas.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\DetalhesDespesasAntigas.cs",
               "RelativeDocumentMoniker": "ADGestaoVeiculosERP\\DetalhesDespesasAntigas.cs",
               "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\DetalhesDespesasAntigas.cs [Design]",
               "RelativeToolTip": "ADGestaoVeiculosERP\\DetalhesDespesasAntigas.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T11:07:30.602Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-24T11:07:30.602Z"
             },
             {
               "$type": "Document",
@@ -174,8 +167,7 @@
               "RelativeToolTip": "ADGestaoVeiculosERP\\ListaCusto.cs",
               "ViewState": "AgIAAMgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T12:43:52.474Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T12:43:52.474Z"
             },
             {
               "$type": "Document",
@@ -187,8 +179,7 @@
               "RelativeToolTip": "ADGestaoVeiculosERP\\viaturasMenu.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAIBJwBIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T16:07:46.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T16:07:46.051Z"
             },
             {
               "$type": "Document",
@@ -200,8 +191,7 @@
               "RelativeToolTip": "ADGestaoVeiculosERP\\DetalhesDespesasAntigas.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAgwDgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T11:26:37.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T11:26:37.185Z"
             },
             {
               "$type": "Document",
@@ -212,8 +202,7 @@
               "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\EditorCondutor.cs [Design]",
               "RelativeToolTip": "ADGestaoVeiculosERP\\EditorCondutor.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T10:10:55.649Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-24T10:10:55.649Z"
             },
             {
               "$type": "Document",
@@ -224,8 +213,7 @@
               "ToolTip": "C:\\Users\\jtalm\\source\\repos\\ADGestaoVeiculosERP\\ADGestaoVeiculosERP\\MatriculasCompras.cs [Design]",
               "RelativeToolTip": "ADGestaoVeiculosERP\\MatriculasCompras.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T09:45:29.289Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-19T09:45:29.289Z"
             }
           ]
         }

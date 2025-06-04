@@ -13,17 +13,17 @@ namespace ADGestaoVeiculosERP
     {
         public override void AntesDeGravar(ref bool Cancel, ExtensibilityEventArgs e)
         {
-            
+
             var tipodoc = this.DocumentoCompra.Tipodoc;
-            if (tipodoc == "COMBV") 
+            if (tipodoc == "COMBV")
             {
                 var linhas = this.DocumentoCompra.Linhas.NumItens;
 
-                for (global::System.Int32 i = 1; i < linhas +1; i++)
+                for (global::System.Int32 i = 1; i < linhas + 1; i++)
                 {
-                   
+
                     var linha = this.DocumentoCompra.Linhas.GetEdita(i);
-                 
+
                     if (linha.Artigo != "")
                     {
                         var campo = linha.CamposUtil["CDU_Kms"].Valor.ToString();
@@ -52,7 +52,7 @@ namespace ADGestaoVeiculosERP
 
 
 
-            
+
         }
 
         public override void DepoisDeGravar(string Filial, string Tipo, string Serie, int NumDoc, ExtensibilityEventArgs e)
@@ -60,12 +60,12 @@ namespace ADGestaoVeiculosERP
             try
             {
 
-           
+
                 if (this.DocumentoCompra.Tipodoc == "VFA")
                 {
                     var numero = this.DocumentoCompra.Linhas.NumItens;
                     bool encontrouDespvi = false;
-                    for (int i = 1; i <= numero +1; i++)
+                    for (int i = 1; i <= numero + 1; i++)
                     {
                         var linha = this.DocumentoCompra.Linhas.GetEdita(i);
                         var artigo = BSO.Base.Artigos.Edita(linha.Artigo);
@@ -82,11 +82,11 @@ namespace ADGestaoVeiculosERP
                         criarViaturaForm.ShowDialog();
                     }
                 }
- 
+
                 if (this.DocumentoCompra.Tipodoc == "COMBV")
                 {
                     var numero = this.DocumentoCompra.Linhas.NumItens;
-               
+
                     for (int i = 1; i <= numero + 1; i++)
                     {
                         var linha = this.DocumentoCompra.Linhas.GetEdita(i);
@@ -103,12 +103,12 @@ namespace ADGestaoVeiculosERP
                             WHERE IdMatricula = '{matricula}'";
                             BSO.DSO.ExecuteSQL(UpdateKMS);
                         }
-                        
+
                         var totalCombustivel = DocumentoCompra.Linhas.GetEdita(i).PrecUnit * DocumentoCompra.Linhas.GetEdita(i).Quantidade;
                         var viaturaTotalCombustivel = viatura2.DaValor<decimal>("TotalCombustivel");
                         var calculadoCombustivel = (double)viaturaTotalCombustivel + totalCombustivel;
                         string TotalCombustivel = calculadoCombustivel.ToString("F2").Replace(",", ".");
-                
+
                         var update = $@"UPDATE [PRIPVEIGA].[dbo].AD_Viaturas
                             SET TotalCombustivel = {TotalCombustivel}
                             WHERE IdMatricula = '{matricula}'";
@@ -118,7 +118,7 @@ namespace ADGestaoVeiculosERP
                         // AVISO (somente se a matrícula ainda não tiver sido avisada)
                         if (!matriculasComAviso.Contains(matricula))
                         {
-                            var query = $"SELECT * FROM [PRIPVEIGA].[dbo].AD_RegistrosManutencao where IdMatricula = '{matricula}'";
+                            var query = $"SELECT TOP 1 * FROM [PRIPVEIGA].[dbo].AD_RegistrosManutencao where IdMatricula = '{matricula}'";
                             var viatura = BSO.Consulta(query);
                             var numvia = viatura.NumLinhas();
                             viatura.Inicio();
@@ -129,7 +129,7 @@ namespace ADGestaoVeiculosERP
                                 var dataDoc = this.DocumentoCompra.DataDoc;
                                 var dataString = viatura.DaValor<DateTime>("DataEvento");
                                 var infoData = viatura.DaValor<string>("Descricao");
-               
+
 
                                 if (!string.IsNullOrEmpty(dataString.ToString()))
                                 {
@@ -254,8 +254,8 @@ namespace ADGestaoVeiculosERP
                     var linha = this.DocumentoCompra.Linhas.GetEdita(i);
                     if (linha.Artigo != "")
                     {
-                        
-                        if (KeyCode == 77 && Shift == 2) 
+
+                        if (KeyCode == 77 && Shift == 2)
                         {
                             MatriculasCompras matriculasCompras = new MatriculasCompras(BSO, this.DocumentoCompra);
                             matriculasCompras.ShowDialog();
@@ -266,7 +266,7 @@ namespace ADGestaoVeiculosERP
                 }
                 if (KeyCode == 77 && Shift == 2)
                 {
-                   
+
                 }
                 else
                 {
