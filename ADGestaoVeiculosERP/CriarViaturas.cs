@@ -61,7 +61,7 @@ namespace ADGestaoVeiculosERP
             NUD_KMActuais.Text = veiculoEscolhido.DaValor<string>("KMActuais");
             NUD_DiaPrestacao.Text = veiculoEscolhido.DaValor<string>("DiaPrestacao");
 
-            dtp_Data.Value  = veiculoEscolhido.DaValor<DateTime>("Data");
+            dtp_Data.Value = veiculoEscolhido.DaValor<DateTime>("Data");
 
 
             // Verificação para garantir que DataCompra seja tratada corretamente
@@ -99,7 +99,7 @@ namespace ADGestaoVeiculosERP
             TXT_ObsCompra.Text = veiculoEscolhido.DaValor<string>("ObsCompra");
 
             var codEntidade = veiculoEscolhido.DaValor<string>("CodEntidade");
-         
+
             if (codEntidade == "0") // Verifica se codEntidade é null ou vazio
             {
                 TXT_CodEntidade.Text = "";
@@ -140,7 +140,7 @@ namespace ADGestaoVeiculosERP
         {
             this.Close();
         }
-      
+
         private void btnF4_Click(object sender, EventArgs e)
         {
             MetodoGetVeiculos();
@@ -169,58 +169,59 @@ namespace ADGestaoVeiculosERP
             TXT_Matricula.Text = veiculo["IdMatricula"];
             TXT_Marca.Text = veiculo["Marca"];
             TXT_Modelo.Text = veiculo["Modelo"];
-           TXT_Cor.Text = veiculo["Cor"];
-           TXT_Categoria.Text = veiculo["Categoria"];
+            TXT_Cor.Text = veiculo["Cor"];
+            TXT_Categoria.Text = veiculo["Categoria"];
             NUD_Cilindrada.Text = veiculo["Cilindrada"];
-           NUD_Lugares.Text = veiculo["Lugares"];
-           TXT_NumCondutor.Text = veiculo["NumCondutor"];
-           CB_Combustivel.SelectedItem = veiculo["Combustivel"];
-           NUD_Kilometrosiniciais.Text = veiculo["KilometrosIniciais"];
+            NUD_Lugares.Text = veiculo["Lugares"];
+            TXT_NumCondutor.Text = veiculo["NumCondutor"];
+            CB_Combustivel.SelectedItem = veiculo["Combustivel"];
+            NUD_Kilometrosiniciais.Text = veiculo["KilometrosIniciais"];
 
-                      TXT_TotalDespesas.Text = veiculo["TotalDespesas"];
-                      TXT_TotalCombustivel.Text = veiculo["TotalCombustivel"];
-                      TXT_Obs.Text = veiculo["Obs"];
-                      CB_Activo.Checked = Convert.ToBoolean(veiculo["Activo"]);
-                      NUD_Tara.Text = veiculo["Tara"];
-                      TXT_TipoViatura.Text = veiculo["TipoViatura"];
-                      NUD_MedioConsumo.Text = veiculo["MediaConsumo"];
-                      NUD_KMActuais.Text = veiculo["KMActuais"];
-                      NUD_DiaPrestacao.Text = veiculo["DiaPrestacao"];
+            TXT_TotalDespesas.Text = veiculo["TotalDespesas"];
+            TXT_TotalCombustivel.Text = veiculo["TotalCombustivel"];
+            TXT_Obs.Text = veiculo["Obs"];
+            CB_Activo.Checked = Convert.ToBoolean(veiculo["Activo"]);
+            NUD_Tara.Text = veiculo["Tara"];
+            TXT_TipoViatura.Text = veiculo["TipoViatura"];
+            NUD_MedioConsumo.Text = veiculo["MediaConsumo"];
+            NUD_KMActuais.Text = veiculo["KMActuais"];
+            NUD_DiaPrestacao.Text = veiculo["DiaPrestacao"];
 
-                      if(veiculo["DataCompra"] != "")
-                      {
-                          DTP_DataCompra.Value = DateTime.Parse(veiculo["DataCompra"]);
-                      }
-                        if (veiculo["Data"] != "")
-                        {
-                            dtp_Data.Value = DateTime.Parse(veiculo["Data"]);
-                        }
+            if (veiculo["DataCompra"] != "")
+            {
+                DTP_DataCompra.Value = DateTime.Parse(veiculo["DataCompra"]);
+            }
+            if (veiculo["Data"] != "")
+            {
+                dtp_Data.Value = DateTime.Parse(veiculo["Data"]);
+            }
             TXT_CodEntidade.Text = veiculo["CodEntidade"];
-                      TXT_TipoCompra.Text = veiculo["TipoCompra"];
-                      NUD_ValorMensal.Text = veiculo["ValorMensal"];
+            TXT_TipoCompra.Text = veiculo["TipoCompra"];
+            NUD_ValorMensal.Text = veiculo["ValorMensal"];
 
 
-                      if (veiculo["PrazoPagamento"] != "")
-                      {
-                          DTP_PrazoPagamento.Value = DateTime.Parse(veiculo["PrazoPagamento"]);
-                      }
+            if (veiculo["PrazoPagamento"] != "")
+            {
+                DTP_PrazoPagamento.Value = DateTime.Parse(veiculo["PrazoPagamento"]);
+            }
 
-                      TXT_ObsCompra.Text = veiculo["ObsCompra"];
-            
+            TXT_ObsCompra.Text = veiculo["ObsCompra"];
 
-                      if(veiculo["CodEntidade"]  != "0") {
-              var identidade = veiculo["CodEntidade"];
-              var queryCondutor = $@"SELECT Nome FROM  [PRIPVEIGA].[dbo].AD_Entidades WHERE ID ={identidade}";
-                          var resultCondutor = BSO.Consulta(queryCondutor);
-                          TXT_NomeEntidade.Text = resultCondutor.DaValor<string>("Nome");
-                      }
-                      else
-                      {
-                          TXT_CodEntidade.Text = "";
-                          TXT_NomeEntidade.Text = "";
-                      }
 
-                     
+            if (veiculo["CodEntidade"] != "0")
+            {
+                var identidade = veiculo["CodEntidade"];
+                var queryCondutor = $@"SELECT Nome FROM  [PRIPVEIGA].[dbo].AD_Entidades WHERE ID ={identidade}";
+                var resultCondutor = BSO.Consulta(queryCondutor);
+                TXT_NomeEntidade.Text = resultCondutor.DaValor<string>("Nome");
+            }
+            else
+            {
+                TXT_CodEntidade.Text = "";
+                TXT_NomeEntidade.Text = "";
+            }
+
+
             if (veiculo["NumCondutor"] != "0")
             {
                 var idcondutor = veiculo["NumCondutor"];
@@ -232,7 +233,7 @@ namespace ADGestaoVeiculosERP
             {
                 TXT_NumCondutor.Text = "";
                 TXT_NomeCondutor.Text = "";
-            } 
+            }
             CarregarMatriculas();
             tabcontrol.Enabled = true;
         }
@@ -446,7 +447,7 @@ namespace ADGestaoVeiculosERP
         private void UpdateViatura()
         {
 
-            var combustivel = CB_Combustivel?.SelectedItem?.ToString(); 
+            var combustivel = CB_Combustivel?.SelectedItem?.ToString();
             string dataCompraFormatada = DTP_DataCompra.Value.ToString("yyyy-MM-dd HH:mm:ss.fffffff", CultureInfo.InvariantCulture);
             string dataPrazoPagamentoFormatada = DTP_PrazoPagamento.Value.ToString("yyyy-MM-dd HH:mm:ss.fffffff", CultureInfo.InvariantCulture);
             var dataCompraSQL = "NULL";
@@ -493,7 +494,7 @@ namespace ADGestaoVeiculosERP
 
         private void BT_Novo_Click(object sender, EventArgs e)
         {
-            
+
 
             LimparCampos();
         }
@@ -535,7 +536,7 @@ namespace ADGestaoVeiculosERP
             TXT_Descricao.Text = "";
             NUD_Kilometrosiniciais.Value = 0;
             DTP_DataInspecao.CustomFormat = " ";
-   
+
         }
 
         private void BT_Adcionar_Click(object sender, EventArgs e)
@@ -696,11 +697,11 @@ namespace ADGestaoVeiculosERP
                 //ListaCustos(matri);
                 // var query = PSO.Listas.BSO.Listas.CarregaLista("ListasTrabalho", "5D89F3F4-7D32-11E3-90FB-000C29012999");
 
-               // Control control = new Control();
+                // Control control = new Control();
 
 
-               // PSO.Listas.BSO.Listas.TrataF4Id("CabecCompras", "", this, control, "Movimentos de Compra - Viaturas", "783D5F9B-9ED3-4EEC-8BED-E5A2D20F3A26");//3427ADAD-2D31-4F2A-9319-12240E7B034E
-            
+                // PSO.Listas.BSO.Listas.TrataF4Id("CabecCompras", "", this, control, "Movimentos de Compra - Viaturas", "783D5F9B-9ED3-4EEC-8BED-E5A2D20F3A26");//3427ADAD-2D31-4F2A-9319-12240E7B034E
+
             }
             catch (Exception ex)
             {
@@ -750,7 +751,7 @@ namespace ADGestaoVeiculosERP
         private void listaManutencaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var matri = TXT_Matricula.Text;
-            ListaManutencao listaCustoForm = new ListaManutencao(matri,BSO, PSO);
+            ListaManutencao listaCustoForm = new ListaManutencao(matri, BSO, PSO);
             listaCustoForm.ShowDialog();
         }
 
@@ -793,10 +794,10 @@ namespace ADGestaoVeiculosERP
                     {
                         dataConvertida = data;
                     }
-                    
+
 
                     string dataSQL = dataConvertida.HasValue ? $"'{dataConvertida.Value.ToString("yyyy-MM-dd")}'" : "NULL";
-                    
+
                     setClause = $"DataEvento = {dataSQL}";
                     Where = $"AND Descricao = '{descricaoOriginal}'";
                 }
@@ -832,7 +833,7 @@ namespace ADGestaoVeiculosERP
 
         private void listaDasDespesasDESPVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormListaDESPV formListaDESPV = new FormListaDESPV(TXT_Matricula.Text, BSO, PSO);
+            FormListaDESPV formListaDESPV = new FormListaDESPV("Lista de Documentos DESPV", BSO, PSO, TXT_Matricula.Text);
             formListaDESPV.ShowDialog();
         }
     }
