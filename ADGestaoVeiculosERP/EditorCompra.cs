@@ -96,12 +96,20 @@ namespace ADGestaoVeiculosERP
                         var viatura2 = BSO.Consulta(query2);
                         var matriculasComAviso = new HashSet<string>();
 
+                        var queryVerificaUltimoKms = $@"SELECT  MAX(CDU_UltimoKms)AS 'CDU_UltimoKms' fROM CabecCompras AS CC 
+                                                    INNER JOIN LinhasCompras AS LC ON CC.Id = LC.IdCabecCompras
+                                                    WHERE LC.CDU_Matricula = '{matricula}' ";
+                        var ultimoKms = BSO.Consulta(queryVerificaUltimoKms).DaValor<decimal>("CDU_Matricula");
+
                         if (kms != "0")
                         {
-                            var UpdateKMS = $@"UPDATE [PRIPVEIGA].[dbo].AD_Viaturas
-                            SET KMActuais = {kms}
-                            WHERE IdMatricula = '{matricula}'";
-                            BSO.DSO.ExecuteSQL(UpdateKMS);
+                            if (ultimoKms > Convert.ToDecimal(kms))
+                            {
+                                var UpdateKMS = $@"UPDATE [PRIPVEIGA].[dbo].AD_Viaturas
+                                SET KMActuais = {kms}
+                                WHERE IdMatricula = '{matricula}'";
+                                BSO.DSO.ExecuteSQL(UpdateKMS);
+                            }
                         }
 
                         var totalCombustivel = DocumentoCompra.Linhas.GetEdita(i).PrecUnit * DocumentoCompra.Linhas.GetEdita(i).Quantidade;
@@ -169,12 +177,25 @@ namespace ADGestaoVeiculosERP
                         var query2 = $"SELECT * FROM [PRIPVEIGA].[dbo].AD_Viaturas where IdMatricula = '{matricula}'";
                         var viatura2 = BSO.Consulta(query2);
 
+                        var queryVerificaUltimoKms = $@"SELECT  MAX(CDU_UltimoKms)AS 'CDU_UltimoKms' fROM CabecCompras AS CC 
+                                                    INNER JOIN LinhasCompras AS LC ON CC.Id = LC.IdCabecCompras
+                                                    WHERE LC.CDU_Matricula = '{matricula}' ";
+                        var ultimoKms = BSO.Consulta(queryVerificaUltimoKms).DaValor<decimal>("CDU_Matricula");
+
+
+
                         if (!string.IsNullOrEmpty(kms) && kms != "0")
                         {
-                            var UpdateKMS = $@"UPDATE [PRIPVEIGA].[dbo].AD_Viaturas
+                            //verifica se o ultmo kms é maior que o atual
+                            if (ultimoKms > Convert.ToDecimal(kms))
+                            {
+                                var UpdateKMS = $@"UPDATE [PRIPVEIGA].[dbo].AD_Viaturas
                             SET KMActuais = {kms}
                             WHERE IdMatricula = '{matricula}'";
-                            BSO.DSO.ExecuteSQL(UpdateKMS);
+                                BSO.DSO.ExecuteSQL(UpdateKMS);
+                            }
+
+               
                         }
 
                         var totalDespesa = this.DocumentoCompra.Linhas.GetEdita(i).PrecUnit * this.DocumentoCompra.Linhas.GetEdita(i).Quantidade;

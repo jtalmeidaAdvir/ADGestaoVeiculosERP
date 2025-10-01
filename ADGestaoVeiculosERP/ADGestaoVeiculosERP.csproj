@@ -166,6 +166,12 @@
     <Compile Include="FormEditorVenda.Designer.cs">
       <DependentUpon>FormEditorVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormListaDESPV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaDESPV.Designer.cs">
+      <DependentUpon>FormListaDESPV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditorVenda.resx">
       <DependentUpon>FormEditorVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaDESPV.resx">
+      <DependentUpon>FormListaDESPV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>

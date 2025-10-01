@@ -120,6 +120,7 @@
             this.TXT_Marca = new System.Windows.Forms.TextBox();
             this.CB_Activo = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.listaDasDespesasDESPVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Tara)).BeginInit();
@@ -226,7 +227,8 @@
             // 
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaCustoToolStripMenuItem,
-            this.listaManutencaoToolStripMenuItem});
+            this.listaManutencaoToolStripMenuItem,
+            this.listaDasDespesasDESPVToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -237,14 +239,14 @@
             // listaCustoToolStripMenuItem
             // 
             this.listaCustoToolStripMenuItem.Name = "listaCustoToolStripMenuItem";
-            this.listaCustoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.listaCustoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.listaCustoToolStripMenuItem.Text = "Lista Custo";
             this.listaCustoToolStripMenuItem.Click += new System.EventHandler(this.listaCustoToolStripMenuItem_Click);
             // 
             // listaManutencaoToolStripMenuItem
             // 
             this.listaManutencaoToolStripMenuItem.Name = "listaManutencaoToolStripMenuItem";
-            this.listaManutencaoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.listaManutencaoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.listaManutencaoToolStripMenuItem.Text = "Lista Manutencao";
             this.listaManutencaoToolStripMenuItem.Click += new System.EventHandler(this.listaManutencaoToolStripMenuItem_Click);
             // 
@@ -1075,6 +1077,13 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // listaDasDespesasDESPVToolStripMenuItem
+            // 
+            this.listaDasDespesasDESPVToolStripMenuItem.Name = "listaDasDespesasDESPVToolStripMenuItem";
+            this.listaDasDespesasDESPVToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.listaDasDespesasDESPVToolStripMenuItem.Text = "Lista Das Despesas (DESPV)";
+            this.listaDasDespesasDESPVToolStripMenuItem.Click += new System.EventHandler(this.listaDasDespesasDESPVToolStripMenuItem_Click);
+            // 
             // CriarViaturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1218,5 +1227,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DateTimePicker dtp_Data;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ToolStripMenuItem listaDasDespesasDESPVToolStripMenuItem;
     }
 }

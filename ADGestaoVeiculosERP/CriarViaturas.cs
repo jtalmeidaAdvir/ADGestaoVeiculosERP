@@ -829,5 +829,11 @@ namespace ADGestaoVeiculosERP
             ListaDespesasF3M listaDespesasF3M = new ListaDespesasF3M(TXT_Matricula.Text, BSO, PSO);
             listaDespesasF3M.ShowDialog();
         }
+
+        private void listaDasDespesasDESPVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListaDESPV formListaDESPV = new FormListaDESPV(TXT_Matricula.Text, BSO, PSO);
+            formListaDESPV.ShowDialog();
+        }
     }
 }
