@@ -92,25 +92,32 @@ namespace ADGestaoVeiculosERP
                         var linha = this.DocumentoCompra.Linhas.GetEdita(i);
                         var matricula = linha.CamposUtil["CDU_MAtricula"].Valor.ToString();
                         var kms = linha.CamposUtil["CDU_Kms"].Valor.ToString();
+                    
                         var query2 = $"SELECT * FROM [PRIPVEIGA].[dbo].AD_Viaturas where IdMatricula = '{matricula}'";
                         var viatura2 = BSO.Consulta(query2);
                         var matriculasComAviso = new HashSet<string>();
-
+                 
                         var queryVerificaUltimoKms = $@"SELECT  MAX(CDU_UltimoKms)AS 'CDU_UltimoKms' fROM CabecCompras AS CC 
                                                     INNER JOIN LinhasCompras AS LC ON CC.Id = LC.IdCabecCompras
                                                     WHERE LC.CDU_Matricula = '{matricula}' ";
-                        var ultimoKms = BSO.Consulta(queryVerificaUltimoKms).DaValor<decimal>("CDU_Matricula");
+                        var ultimoKms = BSO.Consulta(queryVerificaUltimoKms).DaValor<decimal>("CDU_UltimoKms");
 
                         if (kms != "0")
                         {
-                            if (ultimoKms > Convert.ToDecimal(kms))
+                            var kmsdecimal = Convert.ToDecimal(kms);
+                    
+
+                          
+                            if (ultimoKms < kmsdecimal)
                             {
                                 var UpdateKMS = $@"UPDATE [PRIPVEIGA].[dbo].AD_Viaturas
-                                SET KMActuais = {kms}
-                                WHERE IdMatricula = '{matricula}'";
+                            SET KMActuais = {kmsdecimal}
+                            WHERE IdMatricula = '{matricula}'";
                                 BSO.DSO.ExecuteSQL(UpdateKMS);
                             }
+                         
                         }
+
 
                         var totalCombustivel = DocumentoCompra.Linhas.GetEdita(i).PrecUnit * DocumentoCompra.Linhas.GetEdita(i).Quantidade;
                         var viaturaTotalCombustivel = viatura2.DaValor<decimal>("TotalCombustivel");
@@ -257,6 +264,7 @@ namespace ADGestaoVeiculosERP
             }
             catch (Exception ex)
             {
+             //   MessageBox.Show("Erro ao atualizar os dados da viatura: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
